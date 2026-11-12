@@ -1,0 +1,4 @@
+### S2b: raw shared read lanes (oracle for binding), accountLocator + all_models remaining
+{"path":"~/.claude","keychainService":"Claude Code-credentials","stale":false,"all_models":null}
+{"path":"~/.claude-conta2","keychainService":"Claude Code-credentials-<hex>","stale":false,"all_models":null}
+  oracle check: raw lanes all_models-equivalent seven_day pct: ~/.claude=75, ~/.claude-conta2=64 (matches S2 rows; no cross-binding)

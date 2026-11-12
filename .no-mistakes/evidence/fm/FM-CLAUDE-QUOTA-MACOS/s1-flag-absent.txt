@@ -1,0 +1,10 @@
+### S1: flag absent (config/claude-accounts = ordinary + ~/.claude-conta2), base commit vs target
+$ ls $FM_HOME/config/claude-accounts-keychain
+ls: /var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T//fm-lab.HMpGis/config/claude-accounts-keychain: No such file or directory
+$ FM_HOME=$LAB bin/fm-claude-account-quota.sh   # target 361f77f6
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: no applicable quota scope
+exit=0

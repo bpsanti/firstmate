@@ -1,0 +1,6 @@
+### S6: flag present, declared dir with no login anywhere (empty lab dir) must not borrow ordinary's lane
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=75%  spendPriority=-0.2225  runway=projected_exhaustion  usableRunwaySeconds=375425  confidence=established
+  row: $LAB/acct-signed-out  root=$LAB/acct-signed-out  uncertainty: quota unknown (error: keychain_unreachable)
+  row: $LAB/acct-signed-out  root=$LAB/acct-signed-out  uncertainty: no applicable quota scope
+exit=0

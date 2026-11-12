@@ -1,0 +1,2 @@
+### S1b: flag absent, base a9ae3c0c vs target 361f77f6 output diff
+IDENTICAL output (flag absent keeps current behavior)

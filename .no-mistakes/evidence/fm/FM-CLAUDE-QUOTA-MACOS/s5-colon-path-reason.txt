@@ -1,0 +1,17 @@
+### S5: list adds a disposable lab dir whose path contains ':' (cannot be named in QUOTA_AXI_CLAUDE_PROFILES)
+-- (a) shared read FAILS (lab wrapper), previous revision 852cadcd:
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: no applicable quota scope
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: the Keychain-aware quota-axi read returned no valid snapshot
+-- (a) shared read FAILS, target 361f77f6:
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: no applicable quota scope
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: a path containing : cannot be named in QUOTA_AXI_CLAUDE_PROFILES
+-- (b) real shared read, target 361f77f6 (full output; other accounts still bound, ':' entry never borrows a lane):
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=75%  spendPriority=-0.2227  runway=projected_exhaustion  usableRunwaySeconds=375399  confidence=established
+  row: ~/.claude-conta2  root=~/.claude-conta2  scope=all_models  status=known  remaining=64%  spendPriority=1.3706  runway=through_reset  confidence=established
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: no applicable quota scope
+  row: $LAB/acct:colon  root=$LAB/acct:colon  uncertainty: a path containing : cannot be named in QUOTA_AXI_CLAUDE_PROFILES
+exit=0

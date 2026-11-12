@@ -1,0 +1,7 @@
+### S2: flag present, ordinary + ~/.claude-conta2 (both Keychain-held logins, real quota-axi 0.1.69)
+$ touch $FM_HOME/config/claude-accounts-keychain; FM_HOME=$LAB bin/fm-claude-account-quota.sh
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=75%  spendPriority=-0.2226  runway=projected_exhaustion  usableRunwaySeconds=375192  confidence=established
+  row: ~/.claude-conta2  root=~/.claude-conta2  scope=all_models  status=known  remaining=64%  spendPriority=1.3698  runway=through_reset  confidence=established
+FM_HOME="$LAB" bin/fm-claude-account-quota.sh  0.71s user 0.32s system 37% cpu 2.761 total
+exit=0

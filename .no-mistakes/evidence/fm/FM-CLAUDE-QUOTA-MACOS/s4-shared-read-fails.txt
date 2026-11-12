@@ -1,0 +1,25 @@
+### S3b: ordinary-only list at previous PR revision 852cadcd (reviewer's note) vs target
+-- 852cadcd:
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: ordinary  root=~/.claude  uncertainty: no declared config directory to read beside the default profile
+
+### S4: flag present, shared Keychain-aware read fails (lab PATH wrapper: real quota-axi for --profile-only, shared read exits 1 with no output)
+-- 852cadcd (reviewer: wrong reason):
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: ordinary  root=~/.claude  uncertainty: the Keychain-aware quota-axi read returned no valid snapshot
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: no applicable quota scope
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: the Keychain-aware quota-axi read returned no valid snapshot
+-- target 361f77f6:
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: ordinary  root=~/.claude  uncertainty: the Keychain-aware quota-axi read returned no valid snapshot
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: no applicable quota scope
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: the Keychain-aware quota-axi read returned no valid snapshot
+exit=0

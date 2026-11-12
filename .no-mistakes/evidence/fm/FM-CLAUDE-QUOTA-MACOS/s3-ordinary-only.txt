@@ -1,0 +1,14 @@
+### S3: list holding only ordinary
+-- flag absent:
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+exit=0
+-- base a9ae3c0c with flag present (pre-fix behavior):
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+-- target with flag present:
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=75%  spendPriority=-0.2232  runway=projected_exhaustion  usableRunwaySeconds=375308  confidence=established
+exit=0

@@ -1,0 +1,15 @@
+ok - each declared account prints its own quota row, read under its own root
+ok - a model-specific scope is printed only for that model
+ok - exhausted, 0%, and unreadable accounts print facts and uncertainty without a verdict
+ok - a projected exhaustion prints each account's own runway seconds and confidence without a verdict
+ok - a rate-limited account names the vendor's reason
+ok - ordinary is measured from the default ~/.claude root
+ok - an absent or malformed list refuses before any quota read
+ok - Keychain logins without a credential file are bound to their own lane by accountLocator
+ok - a credential-file reading is kept and only the Keychain login is bound from the shared read
+ok - an entry no lane or several lanes claim stays unmeasured and never takes another lane
+ok - a failed shared read is disclosed, and an unlistable directory keeps its own reason
+ok - a list with only ordinary is measured from a read of the default profile alone
+ok - without the opt-in flag, Keychain logins stay unmeasured and no Keychain-aware read runs
+ok - a bound lane's stale or unavailable state is disclosed as uncertainty
+# all fm-claude-account-quota tests passed
