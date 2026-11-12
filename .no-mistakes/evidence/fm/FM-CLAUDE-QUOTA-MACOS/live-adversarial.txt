@@ -1,0 +1,17 @@
+### raw shared read accountLocators (what the script binds by)
+{"locator":{"kind":"config-dir","path":"~/.claude","keychainService":"Claude Code-credentials","delegateEligible":true},"status":"known","err":null}
+{"locator":{"kind":"config-dir","path":"<D2>","keychainService":"Claude Code-credentials-cf99cf69","delegateEligible":false},"status":"unknown","err":"keychain_unreachable"}
+
+### adversarial: ambient CLAUDE_CONFIG_DIR=<D2> and CLAUDE_CODE_OAUTH_TOKEN=bogus exported in caller env
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=77%  spendPriority=0.1138  runway=projected_exhaustion  usableRunwaySeconds=391289  confidence=established
+  row: <D2>  root=<D2>  uncertainty: quota unknown (error: keychain_unreachable)
+  row: <D2>  root=<D2>  uncertainty: no applicable quota scope
+exit=0
+
+### boundary: list with only ordinary
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: ordinary  root=~/.claude  uncertainty: no declared config directory to read beside the default profile
+exit=0

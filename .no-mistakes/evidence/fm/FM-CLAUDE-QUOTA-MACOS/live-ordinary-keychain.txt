@@ -1,0 +1,14 @@
+accounts: ordinary (macOS Keychain login, no ~/.claude/.credentials.json) + empty disposable dir <D2>
+=== AFTER (target 852cadcd) ===
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=77%  spendPriority=0.1103  runway=projected_exhaustion  usableRunwaySeconds=391245  confidence=established
+  row: <D2>  root=<D2>  uncertainty: quota unknown (error: keychain_unreachable)
+  row: <D2>  root=<D2>  uncertainty: no applicable quota scope
+exit=0
+=== BEFORE (base a9ae3c0c) ===
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: <D2>  root=<D2>  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: <D2>  root=<D2>  uncertainty: no applicable quota scope
+exit=0
