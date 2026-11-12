@@ -1,0 +1,16 @@
+=== Oracle: per-account Keychain read, one account at a time (no shared read) ===
+--- CLAUDE_CONFIG_DIR=<unset, ordinary>
+[{"id":null,"scopes":[{"scope":"five_hour","usedPercent":null},{"scope":"seven_day","usedPercent":null},{"scope":"model:fable","usedPercent":null},{"scope":"extra_usage","usedPercent":null}]}]
+--- CLAUDE_CONFIG_DIR=~/.claude-conta2
+[{"id":null,"scopes":[{"scope":"seven_day","usedPercent":null},{"scope":"model:fable","usedPercent":null}]}]
+=== Shared read lanes and accountLocator (account identities redacted) ===
+{"accountLocator":{"kind":"config-dir","path":"~/.claude","keychainService":"Claude Code-credentials"}}
+{"accountLocator":{"kind":"config-dir","path":"~/.claude-conta2","keychainService":"Claude Code-credentials-8818afc4"}}
+=== Oracle: each account read alone by quota-axi (Keychain), window percentRemaining ===
+--- ordinary
+[{"id":"five_hour","percentRemaining":77},{"id":"seven_day","percentRemaining":73},{"id":"model:fable","percentRemaining":87}]
+--- ~/.claude-conta2
+[{"id":"seven_day","percentRemaining":56},{"id":"model:fable","percentRemaining":72}]
+--- all_models scope per account (script reports these)
+[]
+[]

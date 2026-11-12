@@ -1,0 +1,20 @@
+=== S1: two accounts, flag ABSENT (default) ===
+claude-accounts
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ~/.claude-conta2  root=~/.claude-conta2  uncertainty: no applicable quota scope
+exit=0
+
+=== S2: two accounts, flag PRESENT ===
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=73%  spendPriority=-0.1286  runway=projected_exhaustion  usableRunwaySeconds=361296  confidence=established
+  row: ~/.claude-conta2  root=~/.claude-conta2  scope=all_models  status=known  remaining=56%  spendPriority=1.0984  runway=through_reset  confidence=established
+exit=0
+
+=== S2b: flag PRESENT, --model opus ===
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=73%  spendPriority=-0.1285  runway=projected_exhaustion  usableRunwaySeconds=361301  confidence=established
+  row: ~/.claude-conta2  root=~/.claude-conta2  scope=all_models  status=known  remaining=56%  spendPriority=1.0984  runway=through_reset  confidence=established
+exit=0

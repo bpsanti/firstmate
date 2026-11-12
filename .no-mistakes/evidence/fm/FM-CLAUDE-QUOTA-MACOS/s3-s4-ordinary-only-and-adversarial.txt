@@ -1,0 +1,23 @@
+=== S3: list holds only ordinary, flag PRESENT ===
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=73%  spendPriority=-0.1278  runway=projected_exhaustion  usableRunwaySeconds=361327  confidence=established
+exit=0
+
+=== S3b: list holds only ordinary, flag ABSENT ===
+claude-account-quota:
+  row: ordinary  root=~/.claude  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: ordinary  root=~/.claude  uncertainty: no applicable quota scope
+exit=0
+
+=== S4: adversarial - signed-out empty dir + colon dir + ordinary, flag PRESENT ===
+ordinary
+$LAB/empty-claude
+$LAB/has:colon
+claude-account-quota:
+  row: ordinary  root=~/.claude  scope=all_models  status=known  remaining=73%  spendPriority=-0.1277  runway=projected_exhaustion  usableRunwaySeconds=361333  confidence=established
+  row: $LAB/empty-claude  root=$LAB/empty-claude  uncertainty: quota unknown (error: keychain_unreachable)
+  row: $LAB/empty-claude  root=$LAB/empty-claude  uncertainty: no applicable quota scope
+  row: $LAB/has:colon  root=$LAB/has:colon  uncertainty: quota unknown (unavailable: Claude profile credentials missing)
+  row: $LAB/has:colon  root=$LAB/has:colon  uncertainty: no applicable quota scope
+  row: $LAB/has:colon  root=$LAB/has:colon  uncertainty: a path containing : cannot be named in QUOTA_AXI_CLAUDE_PROFILES
+exit=0
