@@ -1,0 +1,74 @@
+=== S1 fixed: default wait, spawn holds lock 8s then releases ===
+firstmate root: {run-worktree}
+spawn stand-in holds project lock for 8s (pid 14015); FM_TEARDOWN_TREEHOUSE_LOCK_WAIT_SECS=unset
+teardown exit=0 elapsed=12s
+holder released lock at epoch 1794863324; teardown finished at epoch 1794863328; teardown started at epoch 1794863316
+--- teardown output ---
+  teardown lock-case complete (window firstmate:fm-lock-case, worktree /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.u2jl4y/c/worktree)
+  Backlog: lock-case just finished (this home keeps no markdown backlog at /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.u2jl4y/c/home/data/backlog.md). Update /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.u2jl4y/c/home/data/backlog.md - move lock-case to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+--- state after ---
+lock released by holder before teardown finished: yes
+task meta present: no
+worktree sentinel present: no
+runtime calls:
+  treehouse <return> <--force> </private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.u2jl4y/c/worktree>
+  tmux <kill-window> <-t> <=firstmate:=fm-lock-case>
+
+=== S2 fixed: wait bound 3s, spawn holds lock 60s (wait runs out) ===
+firstmate root: {run-worktree}
+spawn stand-in holds project lock for 60s (pid 18205); FM_TEARDOWN_TREEHOUSE_LOCK_WAIT_SECS=3
+teardown exit=1 elapsed=4s
+holder released lock at epoch none; teardown finished at epoch 1794863332; teardown started at epoch 1794863328
+--- teardown output ---
+  REFUSED: another Treehouse slot allocation or return is in progress for /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.VYJgOM/c/project; nothing was changed
+--- state after ---
+lock released by holder before teardown finished: no
+task meta present: yes
+worktree sentinel present: yes
+runtime calls:
+
+=== S3 fixed: invalid override 'abc' falls back to default 120s, spawn holds 8s ===
+firstmate root: {run-worktree}
+spawn stand-in holds project lock for 8s (pid 19456); FM_TEARDOWN_TREEHOUSE_LOCK_WAIT_SECS=abc
+teardown exit=0 elapsed=12s
+holder released lock at epoch 1794863340; teardown finished at epoch 1794863344; teardown started at epoch 1794863332
+--- teardown output ---
+  teardown lock-case complete (window firstmate:fm-lock-case, worktree /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.9WbPsd/c/worktree)
+  Backlog: lock-case just finished (this home keeps no markdown backlog at /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.9WbPsd/c/home/data/backlog.md). Update /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.9WbPsd/c/home/data/backlog.md - move lock-case to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+--- state after ---
+lock released by holder before teardown finished: yes
+task meta present: no
+worktree sentinel present: no
+runtime calls:
+  treehouse <return> <--force> </private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.9WbPsd/c/worktree>
+  tmux <kill-window> <-t> <=firstmate:=fm-lock-case>
+
+=== S4 fixed: leading-zero override '010' read as 10s, spawn holds 6s ===
+firstmate root: {run-worktree}
+spawn stand-in holds project lock for 6s (pid 25272); FM_TEARDOWN_TREEHOUSE_LOCK_WAIT_SECS=010
+teardown exit=0 elapsed=9s
+holder released lock at epoch 1794863351; teardown finished at epoch 1794863354; teardown started at epoch 1794863345
+--- teardown output ---
+  teardown lock-case complete (window firstmate:fm-lock-case, worktree /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.qbtHrE/c/worktree)
+  Backlog: lock-case just finished (this home keeps no markdown backlog at /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.qbtHrE/c/home/data/backlog.md). Update /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.qbtHrE/c/home/data/backlog.md - move lock-case to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+--- state after ---
+lock released by holder before teardown finished: yes
+task meta present: no
+worktree sentinel present: no
+runtime calls:
+  treehouse <return> <--force> </private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.qbtHrE/c/worktree>
+  tmux <kill-window> <-t> <=firstmate:=fm-lock-case>
+
+=== S5 base 427056c4 (before fix): spawn holds lock 8s then releases ===
+firstmate root: /var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T//fm-base.BYjUKc
+spawn stand-in holds project lock for 8s (pid 28420); FM_TEARDOWN_TREEHOUSE_LOCK_WAIT_SECS=unset
+teardown exit=1 elapsed=1s
+holder released lock at epoch none; teardown finished at epoch 1794863356; teardown started at epoch 1794863355
+--- teardown output ---
+  REFUSED: another Treehouse slot allocation or return is in progress for /private/var/folders/qq/psc64jgx2ngc7y181czrp8lh0000gq/T/drive-lock-wait.LJPJcM/c/project; nothing was changed
+--- state after ---
+lock released by holder before teardown finished: no
+task meta present: yes
+worktree sentinel present: yes
+runtime calls:
+
